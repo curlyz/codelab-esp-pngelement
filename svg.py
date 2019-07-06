@@ -5,7 +5,7 @@ from svgwrite.shapes import Rect
 
 FONT_SIZE = 200
 ROUNDNESS = 80
-COLOR = 'black'
+COLOR = 'white'
 def generateSVG(name):
 	XDIM = len(name) * FONT_SIZE/1.3
 	YDIM = FONT_SIZE 
