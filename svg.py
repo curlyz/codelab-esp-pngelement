@@ -50,7 +50,7 @@ def generate(text) :
 	print('text = ' , text)
 	with open('temp.svg') as f :
 		string  = ''.join(f.readlines()[1:])
-	svg2png(bytestring=string,write_to=os.path.join('png',text + '.png'))
+	svg2png(bytestring=string,write_to=os.path.join('png',text.replace(" ","_") + '.png'))
 
 
 
