@@ -29,7 +29,7 @@ def generateSVG(name):
 		dwg.text(
 			name, 
 			(XDIM//2, YDIM // 2 + FONT_SIZE // 2 - 30),
-			font_family = 'Comfortaa',
+			font_family = 'Chalkboard',
 			fill = COLOR,
 			text_anchor = 'middle',
 		)
