@@ -77,11 +77,16 @@ def deploy():
 
 
 
+import time
 prev = ''
 while True :
-	with open('__string__.py') as f :
-		now = f.read()
-	if now != prev :
-		prev = now
-		build()
-		deploy()
+	# with open('__string__.py') as f :
+	# 	now = f.read()
+	# if now != prev :
+	# 	prev = now
+	# 	build()
+	# 	deploy()
+
+	build()
+	deploy()
+	time.sleep(3)
