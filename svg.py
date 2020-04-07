@@ -87,7 +87,7 @@ if len(sys.argv) > 1:
 
 import time
 prev = ''
-while True :
+if True :
 	# with open('__string__.py') as f :
 	# 	now = f.read()
 	# if now != prev :
