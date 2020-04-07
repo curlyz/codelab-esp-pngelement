@@ -82,8 +82,8 @@ def deploy():
 import sys
 
 
-print(sys.argv)
-
+if len(sys.argv) > 1:
+	add (sys.argv[1])
 
 import time
 prev = ''
