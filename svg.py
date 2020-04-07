@@ -60,6 +60,10 @@ def build ():
 			generate(text)
 
 
+def add (word):
+	with open("__string__.py","a") as f :
+		f.write(word + "\n")
+
 from git import Repo
 def deploy():
 	print('github: file change triggered')
@@ -75,6 +79,10 @@ def deploy():
 		origin.push()
 		print('\tgithub: push remote')
 
+import sys
+
+
+print(sys.argv)
 
 
 import time
