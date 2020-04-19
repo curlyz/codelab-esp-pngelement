@@ -54,7 +54,7 @@ def generate(text) :
 	svg2png(bytestring=string,write_to=os.path.join('png',text.replace(" ","_") + '.png'))
 
 	with open('temp.svg') as ff :
-		with open('svg/{}.svg', "w") as f :
+		with open('svg/{}.svg'.format(text), "w") as f :
 			f.write(ff.read())
 
 def build ():
