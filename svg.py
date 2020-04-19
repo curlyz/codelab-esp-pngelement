@@ -100,6 +100,7 @@ def png2bmp():
 		try:
 			print('convert' , filename)
 			img = PIL.Image.open(os.path.join('png', filename))
+			img = img.convert(mode='P', colors=2)
 			img.save(os.path.join('bmp', filename.replace('.png','.bmp')))
 		except:
 			pass
