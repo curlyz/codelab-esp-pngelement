@@ -46,15 +46,25 @@ import os
 
 def generate(text) : 
 	generateSVG(text.strip())
+
 	text = text.strip()
 	print('text = ' , text)
 	with open('temp.svg') as f :
 		string  = ''.join(f.readlines()[1:])
 	svg2png(bytestring=string,write_to=os.path.join('png',text.replace(" ","_") + '.png'))
 
-
+	with open('temp.svg') as ff :
+		with open('svg/{}.svg', "w") as f :
+			f.write(ff.read())
 
 def build ():
+	try :
+		shutil.rmtree('svg')
+	except:
+		pass
+	
+	os.mkdir('svg')
+
 	with open('__string__.py') as f :
 		for text in f.readlines():
 			generate(text)
@@ -100,7 +110,7 @@ def png2bmp():
 		try:
 			print('convert' , filename)
 			img = PIL.Image.open(os.path.join('png', filename))
-			img = img.convert( colors=2)
+			img = img.convert(mode='L', colors=2)
 			img.save(os.path.join('bmp', filename.replace('.png','.bmp')))
 		except:
 			pass
