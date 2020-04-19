@@ -85,6 +85,13 @@ import sys
 if len(sys.argv) > 1:
 	add (sys.argv[1])
 
+import shutil
+def png2bmp():	
+	shutil.rmtree('bmp')
+	for filename in os.listdir('png'):
+		print('filename' , filename)
+	
+
 import time
 prev = ''
 if True :
@@ -96,5 +103,6 @@ if True :
 	# 	deploy()
 
 	build()
+	png2bmp()
 	deploy()
 	time.sleep(3)
