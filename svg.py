@@ -86,10 +86,23 @@ if len(sys.argv) > 1:
 	add (sys.argv[1])
 
 import shutil
-def png2bmp():	
-	shutil.rmtree('bmp')
+import PIL
+def png2bmp():
+	try :
+		shutil.rmtree('bmp')
+	except:
+		pass
+
+	os.mkdir('bmp')
+
+
 	for filename in os.listdir('png'):
-		print('filename' , filename)
+		try:
+			print('convert' , filename)
+			img = PIL.Image.open(os.path.join('png', filename))
+			img.save(os.path.join('bmp', filename.replace('.png','.bmp')))
+		except:
+			pass
 	
 
 import time
