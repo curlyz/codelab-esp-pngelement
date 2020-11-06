@@ -60,10 +60,12 @@ def generate(text) :
 def build ():
 	try :
 		shutil.rmtree('svg')
-	except:
+	except Exception as err:
+		print(err)
 		pass
-	
 	os.mkdir('svg')
+
+	
 
 	with open('__string__.py') as f :
 		for text in f.readlines():
@@ -118,7 +120,7 @@ def png2bmp():
 
 import time
 prev = ''
-if True :
+while True :
 	# with open('__string__.py') as f :
 	# 	now = f.read()
 	# if now != prev :
